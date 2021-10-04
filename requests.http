@@ -1,0 +1,15 @@
+### This should work on both jar build and native-image build. But works only for jar build.
+POST http://127.0.0.1:8080/
+Content-Type: application/json
+
+{
+  "type": "one"
+}
+
+### It seems that for the native-image build, the @JsonCreator and @JsonValue are ignored inside the SampleType enum.
+POST http://127.0.0.1:8080/
+Content-Type: application/json
+
+{
+  "type": "ONE"
+}
